@@ -24,9 +24,9 @@ import {
 } from "@/components/ui/sidebar"
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Pham Viet Hung",
+    email: "hung.v.pham002@gmail.com",
+    avatar: "/avatars/vhpham.png",
   },
   navMain: [
     {

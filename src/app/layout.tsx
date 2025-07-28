@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AppSidebar } from "@/components/app-sidebar";
+import { SiteHeader } from "@/components/site-header";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +42,19 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-        {children}
+          <SidebarProvider
+            defaultOpen={true}
+            style={{
+              "--sidebar-width": "15rem",
+              "--sidebar-width-mobile": "16rem",
+            } as React.CSSProperties}
+          >
+            <AppSidebar variant="inset" />
+            <SidebarInset>
+              <SiteHeader />
+              {children}
+            </SidebarInset>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
